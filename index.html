@@ -185,7 +185,6 @@ function ajustar(){
   tx.putImageData(id,0,0);
   const t2=document.createElement('canvas');t2.width=t2.height=256;const t2x=t2.getContext('2d');
   t2x.drawImage(t,0,0);t2x.globalCompositeOperation='multiply';t2x.imageSmoothingEnabled=true;
-  for(const s of [8,24]){t2x.globalAlpha=.55;t2x.drawImage(t,0,0,256/s,256/s,0,0,256,256)}
   const gx=grano.getContext('2d');gx.setTransform(1,0,0,1,0,0);gx.fillStyle=gx.createPattern(t2,'repeat');gx.fillRect(0,0,grano.width,grano.height);
   // viñeta suave
   const vg=gx.createRadialGradient(grano.width*.45,grano.height*.42,Math.min(grano.width,grano.height)*.2,grano.width*.5,grano.height*.5,Math.max(grano.width,grano.height)*.8);
